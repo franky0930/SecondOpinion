@@ -1,0 +1,25 @@
+<form role="form" name="editform" ng-submit="submitForm(editform.$valid)" novalidate>
+    <fieldset>
+        <div class="form-group">
+            <label for="lab_panel_name" class="sr-only">Lab Panel Name</label>
+            <input type="text" class="form-control" id="lab_panel_name" placeholder="Enter lab_panel_name" ng-model="labresult.lab_panel_name" required>
+        </div>
+        <input bs-form-control type="date" label="Date Started" label-class="col-xs-2" class="form-control col-xs-10" ng-model="labresult.date" id="started" required>
+        <div class="form-group">
+            <label for="status" class="sr-only">Status</label>
+            <select class="form-control" id="type" ng-model="labresult.status" ng-options="data.name for data in status" required></select>
+        </div>
+        <div class="form-group">
+            <label for="test_name" class="sr-only">Test Name</label>
+            <input type="text" class="form-control" id="test_name" placeholder="Test Name" ng-model="labresult.test_name" required>
+        </div>
+        <div class="form-group">
+            <label for="result_value" class="sr-only">Result Value</label>
+            <input type="text" class="form-control" id="result_value" placeholder="Result Value" ng-model="labresult.result_value" required>
+        </div>
+        <div class="form-group">
+            <label for="result_unit" class="sr-only">Result Unit</label>
+            <input type="text" class="form-control" id="result_unit" placeholder="Result Unit" ng-model="labresult.result_unit">
+        </div>
+    </fieldset>
+</form>

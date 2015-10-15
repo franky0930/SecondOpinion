@@ -1,0 +1,78 @@
+<form role="form" ng-submit="submitForm()">
+    <fieldset>
+        <input bs-form-control type="date" label="Datetime" label-class="col-xs-2" class="col-xs-10" max="{{datetimeMax}}" min="2010-01-01" data-ng-model="bathroom.datetime" required>
+        <div class="form-group row">
+            <label class="control-label col-xs-2">Urine</label>
+            <div class="col-xs-10">
+                <label class="radio-inline">
+                    <input type="radio" data-ng-model="bathroom.urine" value="yes" required> Yes</label>
+                <label class="radio-inline">
+                    <input type="radio" data-ng-model="bathroom.urine" value="no" required> No</label>
+            </div>
+        </div>
+        <div data-ng-hide="bathroom.urine == 'no'">
+            <div class="form-group">
+                <label for="urine_color">Color</label>
+                <div class="row">
+                    <div class="col-xs-10 range-container">
+                        <div class="color_helper urine_color"></div>
+                        <input type="range" id="urine_color" data-ng-model="bathroom.urine_color_num" min="0" max="5" data-ng-change="sliderChange('urine_color')" required>
+                    </div>
+                    <div data-ng-bind="bathroom.urine_color" class="col-xs-2 range-helper"></div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Odor</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="bathroom.urine_odor" value="no smell" required> No smell</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="bathroom.urine_odor" value="normal smell" checked required> Normal smell</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="bathroom.urine_odor" value="normal sweet" required> Smells sweet</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="bathroom.urine_odor" value="Strong odor" required> Strong odor</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-xs-2">Bowel</label>
+            <div class="col-xs-10">
+                <label class="radio-inline">
+                    <input type="radio" data-ng-model="bathroom.bowel" value="yes"> Yes</label>
+                <label class="radio-inline">
+                    <input type="radio" data-ng-model="bathroom.bowel" value="no"> No</label>
+            </div>
+        </div>
+        <div data-ng-hide="bathroom.bowel == 'no'">
+            <div class="form-group">
+                <label for="bowel_color">Color</label>
+                <div class="row">
+                    <div class="col-xs-10 range-container">
+                        <div class="color_helper bowel_color"></div>
+                        <input type="range" id="bowel_color" data-ng-model="bathroom.bowel_color_num" min="0" max="3" data-ng-change="sliderChange('bowel_color')" required>
+                    </div>
+                    <div data-ng-bind="bathroom.bowel_color" class="col-xs-2 range-helper"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="consistency">Consistency</label>
+                <div class="row">
+                    <div class="col-xs-10 range-container">
+                        <input type="range" id="consistency" data-ng-model="bathroom.consistency" min="0" max="100" required> <span class="min-val">Hard</span> <span class="max-val">Soft</span>
+                    </div>
+                    <div class="col-xs-2 range-helper"><span data-ng-bind="bathroom.consistency">50</span> %</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="bowel_odor">Odor</label>
+                <div class="row">
+                    <div class="col-xs-10 range-container">
+                        <input type="range" id="bowel_odor" data-ng-model="bathroom.bowel_odor" min="0" max="100" required> <span class="min-val">No<br>smell</span> <span class="max-val">Strong<br>Smell</span>
+                    </div>
+                    <div class="col-xs-2 range-helper"><span data-ng-bind="bathroom.bowel_odor">50</span> %</div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>

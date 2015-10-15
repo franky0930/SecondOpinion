@@ -1,0 +1,15 @@
+<form role="form" class="form-loader form-login" name="loginform" data-ng-submit="submitForm(loginform.$valid)" novalidate>
+    <div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out"><i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+    <div class="form-group">
+        <label for="username" class="sr-only">Username</label>
+        <input type="email" class="form-control input-lg" id="username" placeholder="email" data-ng-model="user.email" required tabindex="1">
+    </div>
+    <div class="form-group">
+        <label for="password" class="sr-only">password</label>
+        <input type="password" class="form-control input-lg" id="password" placeholder="password" data-ng-model="user.password" data-ng-keyup="$event.keyCode == 13 && loginform.$valid && submitForm(loginform.$valid)" required tabindex="2">
+    </div>
+    <div data-ng-if="is_login_page">
+        <button class="btn btn-lg btn-block btn-success" data-ng-disabled="loginform.$invalid">login</button> <a class="help-link help-link-block" href="#/forgot-password">Forgot Password?</a> <a class="help-link help-link-block help-link-highlighted" href="#/sign-up"><strong>Sign-up</strong> for a free account</a>
+    </div>
+</form>

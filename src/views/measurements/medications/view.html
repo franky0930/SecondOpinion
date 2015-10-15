@@ -1,0 +1,32 @@
+<div class="form-horizontal form-static">
+    <div class="form-group">
+        <label class="col-xs-4 col-sm-2 control-label">Name</label>
+        <div class="col-xs-8 col-sm-10">
+            <p class="form-control-static" data-ng-bind="collection.name"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-4 col-sm-2 control-label">Dosage</label>
+        <div class="col-xs-8 col-sm-10">
+            <p class="form-control-static" data-ng-bind="collection.dosage"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-4 col-sm-2 control-label">Frequency</label>
+        <div class="col-xs-8 col-sm-10">
+            <p class="form-control-static" data-ng-bind="collection.frequencyTxt"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-4 col-sm-2 control-label">Start date</label>
+        <div class="col-xs-8 col-sm-10">
+            <p class="form-control-static" data-ng-bind="(collection.startDate | date:'MMMM dd, yyyy')"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-4 col-sm-2 control-label">End date</label>
+        <div class="col-xs-8 col-sm-10">
+            <p class="form-control-static" data-ng-bind="(collection.endDate | date:'MMMM dd, yyyy')"></p>
+        </div>
+    </div>
+</div>

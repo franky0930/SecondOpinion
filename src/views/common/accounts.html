@@ -1,0 +1,24 @@
+<div content-for="title">Select Account</div>
+<div content-for="navbar-bottom">
+	<div bottombar class="navbar-inner" data-ng-hide="waiting">
+		<a class="btn btn-lg btn-block btn-bottom" data-ng-click="submitForm(accountsform.$valid)" data-ng-disabled="accountsform.$invalid">Continue</a>
+		<a class="btn btn-link btn-lg btn-block" href="#/home" data-ng-if="!isSignUp">Cancel</a>
+	</div>
+</div>
+
+<div class="scrollable">
+	<div class="scrollable-content container" data-ng-hide="waiting">
+		<form class="jumbotron v-align" role="form" name="accountsform" data-ng-submit="submitForm(accountsform.$valid)">
+			<label>Please select an account:</label>
+			<div class="radio" data-ng-repeat="item in accounts">
+				<label>
+					<input type="radio" name="account" id="account_self" data-ng-value="{{item.id}}" data-ng-model="$parent.account" required>
+					{{item.firstName}} {{item.lastName}}
+				</label>
+			</div><!-- .radio -->
+		</form>
+	</div><!-- .container -->
+	<div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out">
+		<i class="fa fa-spinner fa-spin loading-spinner"></i>
+	</div>
+</div><!-- .scrollable -->

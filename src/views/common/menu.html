@@ -1,0 +1,212 @@
+<nav class="scrollable sidebar-scrollable" role="navigation">
+	<div class="scrollable-content">
+		<div class="list-group">
+			<a class="list-group-item parent-item" active-class="on" target="accounts_items" toggle="toggle">
+				Accounts
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="accounts_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/accounts" class="list-group-item" data-ng-hide="hide_switch">
+						<i class="fa fa-exchange"></i>Switch accounts
+					</a>
+					<a href="#/add-account/basic-information" class="list-group-item">
+						<i class="fa fa-users"></i>Add a Person
+					</a>
+				</div><!-- .items-inner -->
+			</div><!-- #accounts_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="summary_items" toggle="toggle">
+				Summary
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="summary_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/health-summary/view" class="list-group-item">
+						<i class="fa fa-cloud-download"></i>View
+					</a>
+					<!--a class="list-group-item hide" toggle="off" target="mainMenu">
+						<i class="fa fa-cloud-download"></i>Download
+				 	</a-->
+				</div><!-- .items-inner -->
+			</div><!-- #summary_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="document_items" toggle="toggle">
+				Documents
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="document_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/documents/list" class="list-group-item">
+						<i class="fa fa-cloud-download"></i>View
+					</a>
+					<!--a href="#/documents/item" class="list-group-item">
+						<i class="fa fa-cloud-upload"></i>Upload
+				 	</a-->
+				</div><!-- .items-inner -->
+			</div><!-- #document_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="share_items" toggle="toggle">
+				Share
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="share_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/share/send" class="list-group-item">
+						<i class="fa fa-share-alt"></i>Share Health Summary
+					</a>
+				</div><!-- .items-inner -->
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/share/shared-with-me" class="list-group-item">
+						<i class="fa fa-share-alt"></i>Shared With Me
+					</a>
+				</div><!-- .items-inner -->
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/share/shared-by-me" class="list-group-item">
+						<i class="fa fa-share-alt"></i>Shared By Me
+					</a>
+				</div><!-- .items-inner -->
+			</div><!-- #share_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="measurements-items" toggle="toggle">
+				Measurements
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="measurements-items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/measurements/health-status" class="list-group-item">
+						<i class="fa fa-heart"></i>Health Status
+					</a>
+					<a href="#/measurements/allergies" class="list-group-item">
+						<i class="fa fa-warning"></i>Allergy
+					</a>
+					<!--a href="#/measurements/immunizations" class="list-group-item">
+						<i class="fa fa-shield"></i>immunizations
+					</a-->
+					<a href="#/measurements/medications" class="list-group-item">
+						<i class="fa fa-medkit"></i>Medications
+					</a>
+					<!--a href="#/measurements/exercises" class="list-group-item">
+						<i class="fa fa-rocket"></i>Exercise
+					</a>
+					<a href="#/measurements/foodsdrinks" class="list-group-item">
+						<i class="fa fa-cutlery"></i>Food & Drink
+					</a>
+					<a  href="#/measurements/heights" class="list-group-item">
+						<i class="fa fa-arrows-v"></i>Height
+					</a>
+					<a href="#/measurements/weights" class="list-group-item">
+						<i class="fa fa-dashboard"></i>Weight
+					</a>
+					<a href="#/measurements/visionrxs" class="list-group-item">
+						<i class="fa fa-eye"></i>visionRx
+					</a>
+					<a href="#/measurements/natural-supplements" class="list-group-item">
+						<i class="fa fa-coffee"></i>Natural Supplements
+					</a>
+					<a href="#/measurements/sleeps" class="list-group-item">
+						<i class="fa fa-moon-o"></i>Sleep
+					</a>
+					<a href="#/measurements/bathrooms" class="list-group-item">
+						<i class="fa fa-bomb"></i>Bathrooms
+					</a-->
+				</div><!-- .items-inner -->
+			</div><!-- #measurements-items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="history_items" toggle="toggle">
+				History
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="history_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<!--a href="#/histories/procedures" class="list-group-item">
+						<i class="fa fa-stethoscope"></i>Procedures
+					</a-->
+					<a href="#/histories/family-histories" class="list-group-item">
+						<i class="fa fa-users"></i>Family history
+					</a>
+					<a href="#/histories/surgical-histories" class="list-group-item">
+						<i class="fa fa-stethoscope"></i>Surgical history
+					</a>
+					<a href="#/histories/social-history" class="list-group-item">
+						<i class="fa fa-glass"></i>Social history
+					</a>
+					<!--a href="#/histories/lab-results" class="list-group-item">
+						<i class="fa fa-flask"></i>Lab Results
+					</a-->
+					<a href="#/histories/conditions" class="list-group-item">
+						<i class="fa fa-flag"></i>Conditions
+					</a>
+				</div><!-- .items-inner -->
+			</div><!-- #history_items -->
+
+			<!--a class="list-group-item parent-item" active-class="on" target="docs_items" toggle="toggle">
+				Documents
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a-->
+			<!--div id="docs_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/documents/list" class="list-group-item">
+						<i class="fa fa-file-text-o"></i>View
+					</a>
+					<a href="#/documents/upload" class="list-group-item">
+						<i class="fa fa-upload"></i>Upload
+					</a>
+				</div><!-- .items-inner - ->
+			</div><!-- #docs_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="info_items" toggle="toggle">
+				Personal Information
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="info_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/profile/personal-info" class="list-group-item">
+						<i class="fa fa-user"></i>Personal Information
+					</a>
+					<a href="#/profile/home-address" class="list-group-item">
+						<i class="fa fa-home"></i>Home Address
+					</a>
+					<a href="#/profile/work-address" class="list-group-item">
+						<i class="fa fa-building"></i>Work Address
+					</a>
+					<a href="#/profile/contact-info" class="list-group-item">
+						<i class="fa fa-book"></i>Phone & Email
+					</a>
+				</div><!-- .items-inner -->
+			</div><!-- #info_items -->
+
+			<a class="list-group-item parent-item" active-class="on" target="settings_items" toggle="toggle">
+				Settings
+				<i class="fa fa-angle-right pull-right"></i>
+				<i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<div id="settings_items" toggleable active-class="in" class="list-group collapse" exclusion-group="menu">
+				<div class="items-inner" toggle="off" target="mainMenu" bubble>
+					<a href="#/change-password" class="list-group-item">
+						<i class="fa fa-lock"></i>Password
+					</a>
+					<a href="#/tutorial" class="list-group-item">
+						<i class="fa fa-info"></i>Tutorial
+					</a>
+					<!--a href="#/sign-up/physician" class="list-group-item">
+						<i class="fa fa-user-md"></i>Physician Link
+					</a-->
+				</div><!-- .items-inner -->
+			</div><!-- #settings_items -->
+			<div toggle="off" target="mainMenu" bubble>
+			<a href="#/logout" class="list-group-item">
+				<i class="fa fa-sign-out"></i>Logout
+			</a>
+			</div>
+		</div><!-- .list-group -->
+	</div><!-- .scrollable-content -->
+</nav><!-- .scrollable -->

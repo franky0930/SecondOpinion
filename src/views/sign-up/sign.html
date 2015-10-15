@@ -1,0 +1,32 @@
+<div content-for="title">Agreement</div>
+<h2 class="title-section">Please sign and agree to the terms and conditions</h2>
+<div id="sign-page" class="scrollable">
+    <div class="scrollable-content container">
+        <form role="form" class="jumbotron" name="signForm" ng-submit="submitForm(signupform.$valid)" novalidate>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis rutrum mauris, nec pharetra augue congue eget. Phasellus consectetur adipiscing adipiscing. Nunc quis viverra orci. Ut ipsum tellus, semper et hendrerit nec, lobortis a eros. Nullam nisl neque, blandit at urna id, malesuada tincidunt justo. Aliquam suscipit quam velit, in malesuada lorem scelerisque sed. Cras posuere leo quis tortor consequat, sit amet ullamcorper orci scelerisque. Fusce dapibus, neque eget porttitor tincidunt, mauris tellus ultrices nibh, vel sodales dui libero in ligula. Integer adipiscing posuere volutpat. Sed ut urna neque. Aliquam sed ornare eros, vitae tincidunt est. Aliquam volutpat nisl porta ligula elementum, in placerat neque sodales.</p>
+            <div class="row border-top">
+                <div class="col-xs-1">
+                    <div class="checkbox-container large">
+                        <input type="checkbox" id="agreementCheckbox" model="user.accept_terms" ng-true-value="1" ngfalsevalue="0" ng-required="1">
+                        <label for="agreementCheckbox"></label>
+                    </div>
+                </div>
+                <div class="col-xs-11">I understand and agree to the terms and conditions of the SecondOpinionExpert, Inc. <a href="app/#/terms">Services Agreement</a>.</div>
+            </div>
+            <div class="row border-top border-bottom">
+                <div class="col-xs-1"><i class="fa fa-calendar calendar-icon"></i>
+                </div>
+                <div class="col-xs-11 sign-date">{{Date.now() | date:'MMMM dd, yyyy'}}</div>
+            </div>
+            <div class="row border-bottom">
+                <input class="sign form-control" type="text" placeholder="Type your name." ng-model="user.sign_name" required>
+            </div>
+            <div class="row border-bottom">
+                <button class="btn btn-lg btn-block" ng-disabled="signForm.$invalid">I AGREE</button>
+            </div>
+            <div class="row border-bottom">
+                <button class="btn btn-lg btn-block secondary">I DECLINE</button>
+            </div>
+        </form>
+    </div>
+</div>

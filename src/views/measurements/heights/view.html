@@ -1,0 +1,39 @@
+<div content-for="title">Height</div>
+<header class="header-section clearfix"><a href="#/measurements/heights" class="pull-left"><i class="fa fa-angle-left"></i> <span>Back</span></a> <a ng-href="#/measurements/heights/{{height.id}}/edit" class="pull-right">Edit</a>
+</header>
+<div id="measurements-form" class="scrollable">
+    <div class="scrollable-content container">
+        <form class="form-horizontal form-static">
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Height</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static" ng-bind="height.height"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Unit</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static" ng-bind="height.unit"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Oz</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static" ng-bind="height.oz"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Date</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static" ng-bind="height.date"></p>
+                </div>
+            </div>
+            <div class="form-group text-area-container">
+                <label class="col-xs-2 control-label">Time</label>
+                <div class="col-xs-10">
+                    <p class="form-control-static" ng-bind="height.time"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

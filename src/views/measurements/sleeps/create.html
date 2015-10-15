@@ -1,0 +1,8 @@
+<div content-for="title">{{ itemData.items }}</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" data-ng-click="submitLink()">Add {{ itemData.item }}</a> <a class="btn btn-link btn-lg btn-block" href="#/{{ itemData.type }}/{{ itemData.shortcut }}">cancel</a>
+    </div>
+</div>
+<div id="sleep-create-form" class="scrollable">
+    <div data-ng-include="'views/' + itemData.type + '/sleeps/edit.html'" class="scrollable-content container"></div>
+</div>

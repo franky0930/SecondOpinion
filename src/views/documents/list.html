@@ -1,0 +1,15 @@
+<div content-for="title">Documents</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a href="#/documents/upload" class="btn btn-lg btn-block btn-bottom">Add Document</a>
+    </div>
+</div>
+<div class="scrollable" id="measurements">
+    <ul class="measurements scrollable-content" ng-show="documents">
+        <li class="record-item" ng-repeat="document in documents"><i class="fa fa-upload"></i><span>{{ document.name }}</span>
+        </li>
+    </ul>
+    <div class="empty-icon" ng-hide="labresults"><i class="fa fa-upload"></i>
+        <h2>Documents</h2>
+        <p>You haven't entered any document yet.</p>
+    </div>
+</div>

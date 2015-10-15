@@ -1,0 +1,17 @@
+input.ng-invalid, textarea.ng-invalid {
+  	background: lighten(@brand-danger, 25%) !important;
+  	border-color: @brand-danger;
+}
+select.ng-invalid-selgender{
+	background: lighten(@brand-danger, 25%);
+	border-color: @brand-danger;
+}
+
+.ng-dirty input.ng-invalid {
+	background: lighten(@brand-danger, 25%);
+  	border-color: @brand-danger;
+}
+
+.ng-dirty input.ng-invalid ~ span.ko {
+  color: @brand-danger;
+}

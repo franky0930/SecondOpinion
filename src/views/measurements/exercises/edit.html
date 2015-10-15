@@ -1,0 +1,37 @@
+<form role="form" name="editform" ng-submit="submitForm(editform.$valid)" novalidate>
+    <fieldset>
+        <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name" ng-model="exercise.name" required>
+        </div>
+        <input bs-form-control type="date" label="Date Started" label-class="col-xs-2" class="form-control col-xs-10" ng-model="exercise.date" id="started" required>
+        <div class="form-group">
+            <label for="time" class="sr-only">Time of day</label>
+            <select class="form-control" id="time" ng-model="exercise.time" ng-options="time.name for time in times" options-disabled="time.is_disabled for time in times" required></select>
+        </div>
+        <div class="form-group text-area-container">
+            <label for="description" class="sr-only">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Description" ng-model="exercise.description" required>
+        </div>
+        <div class="form-group">
+            <label for="duration" class="sr-only">Duration</label>
+            <input type="text" class="form-control" id="duration" placeholder="Duration" ng-model="exercise.duration">
+        </div>
+        <div class="form-group">
+            <label for="distance" class="sr-only">Distance</label>
+            <input type="text" class="form-control" id="distance" placeholder="Distance" ng-model="exercise.distance">
+        </div>
+        <div class="form-group">
+            <label for="units" class="sr-only">Units</label>
+            <select class="form-control" id="units" ng-model="exercise.units" ng-options="unit.name for unit in units" options-disabled="unit.is_disabled for unit in units"></select>
+        </div>
+        <div class="form-group">
+            <label for="number_of_steps" class="sr-only">Number of Steps</label>
+            <input type="text" class="form-control" id="number_of_steps" placeholder="Number of Steps" ng-model="exercise.number_of_steps">
+        </div>
+        <div class="form-group">
+            <label for="calories_burned" class="sr-only">Calories Burned</label>
+            <input type="text" class="form-control" id="calories_burned" placeholder="Calories Burned" ng-model="exercise.calories_burned">
+        </div>
+    </fieldset>
+</form>

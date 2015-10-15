@@ -1,0 +1,185 @@
+.navbar-app {
+	min-height: @navbar-app-height;
+	border-color: @navbar-default-border;
+	background: @navbar-default-bg;
+	border-width: 1px;
+	border-style: solid;
+	color: @navbar-default-color;
+
+	.btn-icon-only .fa, .btn-icon-only .icon {
+		font-size: @btn-icon-only-font-size;
+		vertical-align: middle;
+	}
+
+	.btn-navbar, .btn {
+		background: none;
+		border: none;
+		line-height: @navbar-app-height;
+		padding-top: 0;
+		padding-bottom: 0;
+		color: @navbar-default-link-color;
+		text-transform: uppercase;
+		&:hover {
+			color: @navbar-default-link-color;
+		}
+	}
+
+	.pull-right .btn-navbar {
+		//border-left: 1px solid #fff;
+		border-radius: 0;
+	}
+	.pull-left .btn-navbar {
+		//border-right: 1px solid #fff;
+		border-radius: 0;
+	}
+
+	.fa-arrow-left {
+		display: none;
+	}
+
+	.on {
+		.fa-bars {
+			display: none;
+		}
+		.fa-arrow-left {
+			display: inline-block;
+		}
+	}
+}
+
+.navbar-brand-center {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.navbar-brand {
+	color: @navbar-default-color;
+	height: @navbar-app-height;
+	line-height: @navbar-app-height;
+	font-size: 15px;
+	font-family: @font-family-base-bold;
+	line-height: @navbar-app-height;
+	padding: 0 15px 0 50px;
+	text-align: left;
+}
+
+// Top and bottom navbars with absolute positioning,
+// they are necessary to create scroll areas and fake fixed positioning
+// without glitches.
+
+.navbar-absolute-top, .navbar-absolute-bottom {
+	position: absolute;
+	z-index: @zindex-navbar;
+	border-width: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.app-body {
+	.has-navbar-top & {
+		padding-top: @navbar-app-height;
+	}
+
+	//.has-bottom-bar &,
+	.has-navbar-top .title-section + & {
+		padding-top: 0;
+	}
+
+	.has-bottom-bar & {
+		padding-bottom: 96px;
+	}
+}
+
+.not-logged {
+	.app-body {
+		.has-navbar-top & {
+			padding-top: 0
+		}
+	}
+}
+
+.navbar-absolute-top {
+	top:0;
+}
+
+.navbar-absolute-bottom {
+	display: none;
+	background: #fff;
+	top: auto;
+	bottom: 0;
+	border-bottom: 0 none;
+
+	.navbar-inner {
+		margin: 0;
+		padding: 10px 15px 7px;
+
+		&.inline-btns{
+			text-align: center;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.btn-inline-block {
+			width: 45%
+		}
+
+		.btn-link {
+			margin-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	.navbar-inner.separator {
+		border-top: 1px solid #9D9D9D;
+	}
+
+	.has-bottom-bar & {
+		display: block;
+	}
+}
+
+
+.navbar-ajax-loader {
+	display: inline-block;
+	margin-left: 40px;
+	position: relative;
+	transition: opacity ease .5s;
+	opacity: 0;
+
+	&.loading {
+		opacity: 1
+	}
+
+	.fa {
+		font-size: 30px;
+		margin-top: -22px;
+	}
+}
+
+.sub-nav{
+	height:50px;
+	background : lightgray;
+	padding-left : 1px;
+	padding-right : 1px;
+	padding-top : 7px;
+	border : 1px solid #fff;
+	font-size : 20px;
+	text-align : center;
+}
+.sub-nav a{
+	vertical-align: middle;
+	color : #696969;
+}
+.sub-nav i{
+	margin-right:7px;
+}
+
+.navbar-brand i{
+	margin : 19px 10px auto 0 !important;
+}

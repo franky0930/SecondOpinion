@@ -1,0 +1,38 @@
+// Knob styles
+
+#knob-wrapper > div {
+	margin: 18px auto;
+	outline: none
+}
+
+.knob {
+	#knob-wrapper & {
+		overflow: visible !important;
+	}
+	path {
+		stroke: none;
+		fill: @brand-primary;
+		stroke-weight: .1;
+
+		&:first-child {
+			fill: #fff;
+			stroke: #000;
+		}
+	}
+	circle {
+		fill: #17232F;
+	}
+
+	text {
+		fill: #22323F;
+		font-size: 50px;
+		font-weight: bold;
+	}
+}
+
+.knob-select {
+	margin: -106px auto 0;
+	position: relative;
+	width: 48px;
+	border: 0;
+}

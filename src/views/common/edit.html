@@ -1,0 +1,8 @@
+<div content-for="title">{{ itemData.items }}</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" data-ng-click="submitLink()">Save</a> <a class="btn btn-link btn-lg btn-block" data-ng-href="#/{{ itemData.type }}/{{ itemData.shortcutSingle }}/{{ itemData.id }}">cancel</a>
+    </div>
+</div>
+<div id="measurements-form" class="scrollable">
+    <div data-ng-include="'views/' + itemData.type + '/' + itemData.shortcut + '/edit.html'" class="scrollable-content container"></div>
+</div>

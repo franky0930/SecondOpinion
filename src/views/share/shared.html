@@ -1,0 +1,20 @@
+<div content-for="title">{{title}}</div>
+<div class="scrollable" id="measurements">
+    <div data-ng-hide="waiting">
+        <div class="scrollable-content" data-ng-show="collection">
+            <ul class="list-unstyled measurements">
+                <li class="record-item" data-ng-repeat="item in collection">
+                    <a class="clearfix" href="#/share{{hstate.url}}/{{item.key}}">
+                        <i class="pull-left fa fa-user"></i>
+                        <span class="pull-left" data-ng-if="type == 'byMe'">{{ item.sharedTo }}</span> <span class="pull-left" data-ng-if="type != 'byMe'">{{ item.sharedBy }}</span><i class="pull-right fa fa-angle-right"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="empty-icon" data-ng-hide="collection"><i class="fa fa-share-alt"></i>
+            <h2>{{title}}</h2>
+            <p>There are no records to show.</p>
+        </div>
+    </div>
+    <div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out"><i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+// Menu
+
+#mainMenu {
+  font-size: 15px;
+
+  .list-group{
+    margin: 0;
+
+    &.collapse {
+      max-height: 0;
+      -webkit-transition: max-height 0.15s ease-out;
+      overflow: hidden;
+      display: block;
+
+      &.in {
+        max-height: 1000px;
+        transition: max-height 0.25s ease-in;
+      }
+
+      a {
+        padding-left: 47px;
+        position: relative;
+
+        .fa {
+          font-size: 15px;
+          left: 13px;
+          position: absolute;
+          top: 17px;
+        }
+      }
+    }
+
+    .parent-item {
+      background: #eee;
+      font-family: @font-family-base-bold;
+      padding-left: 16px
+    }
+
+  }
+
+  .fa-angle-right,
+  .fa-angle-down{
+    font-size: 20px;
+  }
+
+  .fa-angle-down {
+    display: none;
+  }
+
+  .on {
+    .fa-angle-right {
+      display: none;
+    }
+    .fa-angle-down {
+      display: inline-block;
+    }
+  }
+}

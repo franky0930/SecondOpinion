@@ -1,0 +1,19 @@
+<div content-for="title">{{itemData.items}}</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" data-ng-click="submitLink()" data-ng-disabled="allergyform.$invalid">Add {{itemData.item}}</a> <a class="btn btn-link btn-lg btn-block" href="#/{{itemData.type}}/{{itemData.shortcut}}">cancel</a> </div>
+</div>
+<div id="measurements-create-form" class="scrollable">
+    <div class="scrollable-content container">
+        <form role="form" name="allergyform" data-ng-submit="submitForm()">
+            <fieldset>
+                <div class="form-group">
+                    <label for="type" class="sr-only">Type</label>
+                    <select class="form-control" id="type" name="allergy_type" data-ng-model="allergy.type" data-ng-options="data.name for data in type" options-disabled="item.is_disabled for item in type" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Allergy" data-ng-model="allergy.name" required> </div>
+                <input bs-form-control type="date" label="Start Date" label-class="col-xs-4" class="col-xs-8" ng-model="allergy.startDate"> </fieldset>
+        </form>
+    </div>
+</div>

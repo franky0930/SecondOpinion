@@ -1,0 +1,30 @@
+<form role="form" ng-submit="submitForm()">
+    <fieldset>
+        <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="naturalsupplements.name">
+        </div>
+        <div class="form-group">
+            <label for="strength" class="sr-only">Strength</label>
+            <input type="text" class="form-control" id="strength" placeholder="Strength" ng-model="naturalsupplements.strength">
+        </div>
+        <div class="form-group">
+            <label for="units" class="sr-only">Units</label>
+            <select class="form-control" id="type" ng-model="naturalsupplements.units" ng-options="unit.name for unit in units" required></select>
+        </div>
+        <div class="form-group">
+            <label for="dosage" class="sr-only">How Taken?</label>
+            <select class="form-control" id="dosage" ng-model="naturalsupplements.dosages" ng-options="dosage.name for dosage in dosages" required></select>
+        </div>
+        <div class="form-group">
+            <label for="how_often_taken" class="sr-only">How Often Taken</label>
+            <input type="text" class="form-control" id="how_often_taken" placeholder="How Often Taken" ng-model="naturalsupplements.how_often_taken" required>
+        </div>
+        <div class="form-group">
+            <label for="reason_for_taking" class="sr-only">Reason for taking</label>
+            <input type="text" class="form-control" id="reason_for_taking" placeholder="Reason for taking" ng-model="naturalsupplements.reason_for_taking">
+        </div>
+        <input bs-form-control type="date" label="Start Date" label-class="col-xs-2" class="col-xs-10" ng-model="naturalsupplements.start_date">
+        <input bs-form-control type="date" label="End Date" label-class="col-xs-2" class="col-xs-10" ng-model="naturalsupplements.end_date">
+    </fieldset>
+</form>

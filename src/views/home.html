@@ -1,0 +1,50 @@
+<div content-for="title">Welcome {{user.firstName}}!</div>
+<div id="home" class="scrollable">
+	<div class="scrollable-content" data-ng-hide="waiting">
+		<h3>Measurements</h3>
+		<div class="home-desktop clearfix">
+			<a href="#/measurements/health-status" data-ng-class="healthActive">
+				<i class="fa fa-heart"></i>
+				<span class="fa-label">Health Status</span>
+			</a>
+			<a href="#/measurements/allergies" data-ng-class="allergyActive">
+				<i class="fa fa-warning"></i>
+				<span class="fa-label">Allergy</span>
+			</a>
+			<a href="#/measurements/medications" data-ng-class="medicationsActive">
+				<i class="fa fa-medkit"></i>
+				<span class="fa-label">Medications</span>
+			</a>
+		</div>
+		<h3>History</h3>
+		<ul class="home-desktop home-desktop-grid list-unstyled clearfix">
+			<li>
+				<a href="#/histories/family-histories" data-ng-class="historyActive">
+					<i class="fa fa-users"></i>
+					<span class="fa-label">Family history</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/histories/surgical-histories" data-ng-class="surgicalActive">
+					<i class="fa fa-stethoscope"></i>
+					<span class="fa-label">Surgical history</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/histories/social-history" data-ng-class="socialActive">
+					<i class="fa fa-glass"></i>
+					<span class="fa-label">Social history</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/histories/conditions" data-ng-class="conditionsActive">
+					<i class="fa fa-flag"></i>
+					<span class="fa-label">Conditions</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out">
+		<i class="fa fa-spinner fa-spin loading-spinner"></i>
+	</div>
+</div>

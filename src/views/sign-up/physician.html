@@ -1,0 +1,35 @@
+<div content-for="title">Account Setup</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" ng-disabled="!data.practice" ng-click="submitLink()">Submit</a> <a class="btn btn-link btn-lg btn-block" href="{{cancel_link}}">cancel</a>
+    </div>
+</div>
+<div id="physics" class="scrollable">
+    <div class="scrollable-content container">
+        <form role="form" name="editform" ng-submit="submitForm(editform.$valid)" novalidate ng-hide="changed_password">
+            <fieldset>
+                <legend>Connect With Your Physician's Practice</legend>
+                <p>You may have received an invite from your physician. If so, this invite contains a code which helps you locate and connect your health records with their practice.</p>
+                <div class="form-group">
+                    <label for="height" class="sr-only">Enter your code here</label>
+                    <input type="text" class="code-input form-control" id="height" placeholder="Enter your code here." ng-model="data.code" required>
+                </div><a class="check-code btn btn-lg btn-block btn-bottom" ng-disabled="editform.$invalid" ng-click="checkCode()">Check code</a>
+                <div class="practice-container" ng-show="data.practice">
+                    <div class="col-xs-1">
+                        <div class="checkbox-container large">
+                            <input type="checkbox" id="checkbox" checked disabled>
+                            <label for="checkbox"></label>
+                        </div>
+                    </div>
+                    <div class="col-xs-11">
+                        <label><b>Physician</b>
+                        </label>
+                        <br>
+                        <label ng-bind="data.practice.physician.name"></label>
+                        <p ng-bind="data.practice.name"></p>
+                    </div>
+                    <br style="clear:both">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,359 @@
+//********Hans Update***********//
+
+@-webkit-keyframes input-highlight {
+  0% {
+    left: 50%;
+    -webkit-transform: scaleX(20%);
+            transform: scaleX(20%);
+
+  }
+  99% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes input-highlight {
+  0% {
+    left: 50%;
+    -webkit-transform: scaleX(20%);
+            transform: scaleX(20%);
+    opacity : 1;
+  }
+  99% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes rippleOn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes rippleOn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes rippleOff {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes rippleOff {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+.form-horizontal .radio {
+    margin-bottom: 10px;
+}
+.radio {
+    label {
+        cursor: pointer;
+        padding-left: 45px;
+        position: relative;
+        z-index : 9999;
+        font-size : 16px;
+        span {
+            display: block;
+            position: absolute;
+            left: 10px;
+            top: 2px;
+            transition-duration: 0.2s;
+            z-index : -100;
+        }
+        .circle {
+            border: 2px solid @lightbg-text;
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+        }
+        .check {
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            background-color: @lightbg-text;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+        }
+        .check:after {
+            display: block;
+            position: absolute;
+            content: "";
+            background-color: @lightbg-text;
+            left: -18px;
+            top: -18px;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            z-index: 1;
+            opacity: 0;
+            margin: 0;
+            -webkit-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+        input[type=radio]:not(:checked) ~ .check:after {
+            -webkit-animation : rippleOff 500ms;
+            animation: rippleOff 500ms;
+        }
+        input[type=radio]:checked ~ .check:after {
+            -webkit-animation : rippleOn 500ms;
+            animation: rippleOn 500ms;
+        }
+
+    }
+
+    .radio-default input[type=radio]:checked ~ .check {
+        background-color: @lightbg-text;
+    }
+    .radio-default input[type=radio]:checked ~ .circle {
+        border-color: @lightbg-text;
+    }
+
+    input[type=radio][disabled] ~ .check,
+    input[type=radio][disabled] ~ .circle {
+        opacity: 0.5;
+    }
+
+    input[type=radio] { display: none; }
+    input[type=radio]:checked ~ .check {
+        -webkit-transform: scale(0.55);
+        -ms-transform: scale(0.55);
+        transform: scale(0.55);
+    }
+    input[type=radio][disabled] ~ .circle {
+        border-color: @lightbg-text;
+    }
+    input[type=radio][disabled] ~ .check {
+        background-color: @lightbg-text;
+    }
+
+    .radio input[type=radio]:checked ~ .check,
+    .radio-default input[type=radio]:checked ~ .check {
+        background-color: rgba(0, 0, 0, 0.84);
+    }
+    .radio-black input[type=radio]:checked ~ .check {
+        background-color: #000000;
+    }
+    .radio-white input[type=radio]:checked ~ .check {
+        background-color: #ffffff;
+    }
+    .radio-inverse input[type=radio]:checked ~ .check {
+        background-color: #3f51b5;
+    }
+    .radio-primary input[type=radio]:checked ~ .check {
+        background-color: #009587;
+    }
+    .radio-success input[type=radio]:checked ~ .check {
+        background-color: #0f9d58;
+    }
+    .radio-info input[type=radio]:checked ~ .check {
+        background-color: #03a9f4;
+    }
+    .radio-warning input[type=radio]:checked ~ .check {
+        background-color: #ff5722;
+    }
+    .radio-danger input[type=radio]:checked ~ .check {
+        background-color: #f44336;
+    }
+
+}
+
+.form-control-wrapper {
+  position: relative;
+
+  .form-control:focus, .form-control.focus {
+    outline: none;
+  }
+
+  .floating-label {
+    color: #7E7E7E;
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    left: 0px;
+    top: 5px;
+    transition: 0.4s ease all;
+    opacity: 0;
+  }
+  .form-control:not(.empty) ~ .floating-label {
+    top: -10px;
+    font-size: 10px;
+    opacity: 1;
+  }
+  .form-control:focus:invalid ~ .floating-label, .form-control.focus:invalid ~ .floating-label {
+    color: @brand-danger;
+  }
+  .form-control:focus ~ .material-input:after, .form-control.focus ~ .material-input:after {
+    background-color: @brand-success;
+  }
+  .form-control:focus:invalid ~ .material-input, .form-control.focus:invalid ~ .material-input {
+    &:before, &:after  {
+      background-color: @brand-danger;
+    }
+  }
+  .form-control.ng-untouched:focus:invalid ~ .material-input, .form-control.focus.ng-untouched:invalid ~ .material-input {
+    &:before, &:after  {
+      background-color: @brand-success;
+    }
+  }
+  .form-control.empty ~ .floating-label {
+    opacity: 1;
+  }
+  .material-input:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    height: 2px;
+    background-color: @brand-success;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform 0s;
+  }
+  .form-control:focus  ~ .material-input:before, .form-control.focus  ~ .material-input:before {
+    transform: scaleX(1);
+    transition: transform 0.4s ease-out;
+  }
+  .material-input:after {
+    content: "";
+    position: absolute;
+    height: 23px;
+    width: 100px;
+    margin-top: 0;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.9;
+    transform-origin: left;
+  }
+  .input-lg ~ .material-input:after {
+    height: 26px;
+  }
+  textarea { resize: none; }
+  textarea ~ .form-control-highlight {
+    margin-top: -11px;
+  }
+
+  // active state
+  .form-control:focus ~ .material-input:after, .form-control.focus ~ .material-input:after {
+    -webkit-animation: input-highlight 0.4s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  // Hints
+  .hint {
+    position: absolute;
+    font-size: 80%;
+    display: none;
+  }
+  .form-control:focus ~ .hint, .form-control.focus ~ .hint {
+    display: block;
+  }
+
+  select ~ .material-input:after {
+    display: none;
+  }
+
+}
+
+.form-group {
+  &.ng-invalid {
+    .material-input:before, input.form-control:focus ~ .material-input:after, input.form-control.focus ~ .material-input:after {
+      background: @brand-warning;
+    }
+    .control-label, input.form-control:not(.empty) ~ .floating-label {
+      color: @brand-warning;
+    }
+  }
+  &.has-error {
+    .material-input:before, input.form-control:focus ~ .material-input:after, input.form-control.focus ~ .material-input:after {
+      background: @brand-danger;
+    }
+    .control-label, input.form-control:not(.empty) ~ .floating-label {
+      color: @brand-danger;
+    }
+  }
+  &.has-success {
+    .material-input:before, input.form-control:focus ~ .material-input:after, input.form-control.focus ~ .material-input:after {
+      background: @brand-success;
+    }
+    .control-label, input.form-control:not(.empty) ~ .floating-label {
+      color: @brand-success;
+    }
+  }
+  &.has-info {
+    .material-input:before, input.form-control:focus ~ .material-input:after, input.form-control.focus ~ .material-input:after {
+      background: @brand-info;
+    }
+    .control-label, input.form-control:not(.empty) ~ .floating-label {
+      color: @brand-info;
+    }
+  }
+
+  .control-label{
+      color: @lightbg-text;
+  }
+  .floating-label{
+      color: @brand-success;
+  }
+
+
+}
+
+.input-group {
+  .form-control-wrapper {
+    .form-control {
+      float: none;
+    }
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .input-group-addon {
+    border: 0;
+    background: transparent;
+  }
+  .input-group-btn .btn {
+    border-radius: 4px;
+    margin: 0;
+  }
+}

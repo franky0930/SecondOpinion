@@ -1,0 +1,96 @@
+<div content-for="title">Social history</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" data-ng-click="submitLink()">Save</a> <a class="btn btn-link btn-lg btn-block" data-ng-href="#/home">cancel</a>
+    </div>
+</div>
+<div id="measurements-form" class="scrollable">
+    <div class="scrollable-content container">
+        <h3>Update your social history information</h3>
+        <form role="form" data-ng-submit="submitForm()">
+            <div class="form-group">
+                <label for="MaritalStatus" class="sr-only">Marital Status</label>
+                <select class="form-control" id="MaritalStatus" data-ng-model="socialstatus[10]" data-ng-options="data.name for data in MaritalStatus" options-disabled="item.is_disabled for item in MaritalStatus"></select>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Do you smoke?</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[1]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[1]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Do you consume alcohol?</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[2]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[2]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Tobacco</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[3]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[3]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Prescription Drug Use</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[4]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[4]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Obesity</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[5]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[5]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Your diet</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[6]" value="1" required> Vegetarian</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[6]" value="2" required> Non-vegetarian</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-offset-2 col-xs-12 col-sm-10">
+                    <label>Do you have any special diet items or restrictions?</label>
+                    <textarea class="form-control" data-ng-model="socialstatus[7]"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Do you engage in any physical activity?</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[8]" value="1" required> Yes</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[8]" value="2" required> No</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-12 col-sm-2 radio-label">Occupation</label>
+                <div class="col-xs-10">
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[9]" value="1" required> Sedentary</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[9]" value="2" required> Active</label>
+                    <label class="radio-inline">
+                        <input type="radio" data-ng-model="socialstatus[9]" value="3" required> Retired</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

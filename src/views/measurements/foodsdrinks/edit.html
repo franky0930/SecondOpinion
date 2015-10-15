@@ -1,0 +1,29 @@
+<form role="form" name="editform" ng-submit="submitForm(editform.$valid)" novalidate>
+    <fieldset>
+        <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="fooddrink.name" required>
+        </div>
+        <input bs-form-control type="date" label="Date" label-class="col-xs-1" class="form-control col-xs-11" ng-model="fooddrink.date" id="started" required>
+        <div class="form-group">
+            <label for="time" class="sr-only">Time of Day</label>
+            <input type="text" class="form-control" id="time" placeholder="Time of Day" ng-model="fooddrink.time" required>
+        </div>
+        <div class="form-group text-area-container">
+            <label for="meal" class="sr-only">Meal</label>
+            <select class="form-control" id="meal" ng-model="fooddrink.meal" ng-options="meal.name for meal in meals" options-disabled="meal.is_disabled for meal in meals" required></select>
+        </div>
+        <div class="form-group">
+            <label for="serving_size" class="sr-only">Serving Size</label>
+            <input type="text" class="form-control" id="serving_size" placeholder="Serving Size" ng-model="fooddrink.serving_size">
+        </div>
+        <div class="form-group">
+            <label for="number_of_servings" class="sr-only">Number of Servings</label>
+            <input type="text" class="form-control" id="number_of_servings" placeholder="Number of Servings" ng-model="fooddrink.number_of_servings">
+        </div>
+        <div class="form-group">
+            <label for="calories" class="sr-only">Calories</label>
+            <input type="text" class="form-control" id="calories" placeholder="Calories" ng-model="fooddrink.calories">
+        </div>
+    </fieldset>
+</form>

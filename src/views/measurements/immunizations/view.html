@@ -1,0 +1,33 @@
+<div class="form-horizontal form-static">
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Vacine Name</label>
+        <div class="col-xs-10">
+            <p class="form-control-static" ng-bind="collection.name"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Date Received</label>
+        <div class="col-xs-10">
+            <p class="form-control-static" ng-bind="collection.date_received"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Number in Series</label>
+        <div class="col-xs-10">
+            <p class="form-control-static"><span ng-bind="collection.number_in_series_n"></span> of <span class="form-control-static" ng-bind="collection.number_in_series_n"></span>
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Adverse Effects</label>
+        <div class="col-xs-10">
+            <p class="form-control-static" ng-bind="collection.adverse_effects"></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-2 control-label">Notes</label>
+        <div class="col-xs-10">
+            <p class="form-control-static" ng-bind="collection.notes"></p>
+        </div>
+    </div>
+</div>

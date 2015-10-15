@@ -1,0 +1,20 @@
+<div content-for="title">Height</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" ng-click="submitLink()">Save</a> <a class="btn btn-link btn-lg btn-block" href="#/measurements/heights">cancel</a>
+    </div>
+</div>
+<div id="measurements-create-form" class="scrollable">
+    <div class="scrollable-content container">
+        <h2 class="title-section text-center">What is your current Height?</h2>
+        <form role="form" ng-submit="submitForm()">
+            <div id="knob-wrapper">
+                <h2 style="text-align: center;font-size: 18px">Feet</h2>
+                <input id="knob-input-ft" knob class="knob" type="range" min="1" max="12" data-width="222" data-height="222" data-anglerange="360" ng-model="height.height" ng-keydown="changeKnob('knob-input-ft', 'ft');" required>
+            </div>
+            <div id="knob-wrapper">
+                <h2 style="text-align: center;font-size: 18px">Inches</h2>
+                <input id="knob-input-in" knob class="knob" type="range" min="1" max="12" data-width="222" data-height="222" data-anglerange="360" ng-model="height.height" ng-keydown="changeKnob('knob-input-in', 'in');" required>
+            </div>
+        </form>
+    </div>
+</div>

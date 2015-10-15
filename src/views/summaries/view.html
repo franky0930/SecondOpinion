@@ -1,0 +1,153 @@
+<div content-for="title">Health Summary</div>
+<section class="scrollable">
+    <div class="scrollable-content" id="summaries" data-ng-hide="waiting">
+        <h2 class="container summary-title">Personal Info</h2>
+        <div class="form-horizontal form-static container">
+            <div class="form-group">
+                <div class="col-xs-2 summary-icon"><i class="pull-left fa fa-user"></i></div><label class="col-xs-10 control-label pull-right">Name</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{summary.patient.firstName}} {{summary.patient.middleName}} {{summary.patient.lastName}}</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-10 control-label pull-right">Address</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{summary.patient.homeAddress.line1}}{{summary.patient.homeAddress.line2}}, {{summary.patient.homeAddress.city}}, {{summary.patient.homeAddress.state}}, {{summary.patient.homeAddress.zip}}, {{summary.patient.homeAddress.country}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-10 control-label pull-right">Contact Number</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{summary.patient.homePhone}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-10 control-label pull-right">Email</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{summary.patient.username}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-10 control-label pull-right">Date of birth</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{summary.patient.dob}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-10 control-label pull-right">Age</label>
+                <div class="col-xs-10 pull-right">
+                    <p class="form-control-static">{{age}}</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="container summary-title">Medical history</h2>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-flag pull-left"></i><h3 class="pull-left">Medical conditions</h3><a class="pull-right" data-ng-href="#/histories/conditions"><i class="fa fa-pencil"></i><span>Edit<span></a>
+            </header>
+            <hr>
+            <p data-ng-if="!summary.medicalConditions">No past family history recorded.</p>
+            
+            <div data-ng-repeat="item in summary.medicalConditions" data-ng-if="item.relationshipTxt == 'Self'">
+                <label class="col-xs-10 control-label pull-right">Problem Name</label>
+                <div class="col-xs-10 pull-right" data-ng-bind="item.name"></div>
+                <label class="col-xs-10 control-label pull-right">Onset</label>
+                <div class="col-xs-10 pull-right" data-ng-bind="item.statusTxt"></div>
+                <label class="col-xs-10 control-label pull-right">Status</label>
+                <div class="col-xs-10 pull-right" data-ng-bind="item.onsetTxt"></div>
+                <hr class="col-xs-9 pull-right">
+            </div>               
+            
+        </div>
+        <br>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-stethoscope pull-left"></i><h3 class="pull-left" style="color:#26C6DA">Past surgical history</h3><a class="pull-right" data-ng-href="#/histories/surgical-histories"><i class="fa fa-pencil"></i><span>Edit<span></a>
+            </header>
+            <hr>
+            <ul>
+                <li data-ng-repeat="item in summary.medicalHistories" data-ng-if="item.typeTxt == 'Past surgical history'">{{item.name}}<i class="col-xs-2 fa fa-circle pull-left"></i></li>
+            </ul>
+        </div>
+        <br>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-glass pull-left"></i><h3 class="pull-left" style="color:#fcc475">Social history</h3><a class="pull-right" data-ng-href="#/histories/social-history"><i class="fa fa-pencil"></i><span>Edit<span></a>
+            </header>
+            <hr>
+            <article class="col-xs-10 pull-right">
+                <p data-ng-bind="summary.socialStatusNarrative"></p>
+            </article>
+        </div>
+        <br>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-medkit pull-left"></i><h3 class="pull-left" style="color:#E84E40">Medications</h3><a class="pull-right" data-ng-href="#/measurements/medications"><i class="fa fa-pencil"></i><span>Edit</span></a>
+            </header>
+            <hr>
+            <article>
+                <p data-ng-if="!summary.medications.length">No medications recorded.</p>
+                <div data-ng-repeat="item in summary.medications" data-ng-if="summary.medications.length">
+                    <label class="col-xs-10 control-label pull-right">Drug Name</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.name"></div>
+                    <label class="col-xs-10 control-label pull-right">Dosage</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.dosage"></div>
+                    <label class="col-xs-10 control-label pull-right">Frequency</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.frequencyTxt"></div>
+                    <label class="col-xs-10 control-label pull-right">Start Date</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.startDate | date:'MM/dd/yyyy'"></div>
+                    <label class="col-xs-10 control-label pull-right">End Date</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.endDate | date:'MM/dd/yyyy'"></div>
+                    <hr class="col-xs-9 pull-right">
+                </div>  
+                
+            </article>
+        </div>
+        <br>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-warning pull-left"></i><h3 class="pull-left" style="color:#FFEA00">Allergies</h3><a class="pull-right" data-ng-href="#/measurements/allergies"><i class="fa fa-pencil"></i><span>Edit</span></a>
+            </header>
+            <hr>
+            <article>
+                <p data-ng-if="!summary.allergies.length">No allergies recorded.</p>
+                <div data-ng-repeat="item in summary.allergies" data-ng-if="summary.allergies.length">
+                    <label class="col-xs-10 control-label pull-right">Allergic type</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.typeTxt"></div>
+                    <label class="col-xs-10 control-label pull-right">Allergy to</label>
+                    <div class="col-xs-10 pull-right" data-ng-bind="item.name"></div>
+                    <hr class="col-xs-9 pull-right">
+                </div>  
+            </article>
+        </div>
+        <br>
+        <div class="form-horizontal form-static container">
+            <header class="clearfix">
+                <i class="fa fa-users pull-left"></i><h3 class="pull-left">Family history</h3><a class="pull-right" data-ng-href="#/histories/family-histories"><i class="fa fa-pencil"></i><span>Edit</span></a>
+            </header>
+            <hr>
+            <p data-ng-if="!summary.medicalConditions.length">No past family history recorded.</p>
+            <div data-ng-repeat="item in summary.medicalConditions" data-ng-if="summary.medicalConditions.length">
+                <label class="col-xs-10 control-label pull-right">Relation</label>
+                <div class="col-xs-10 pull-right" data-ng-bind="item.relationshipTxt"></div>
+                <label class="col-xs-10 control-label pull-right">Medical condition</label>
+                <div class="col-xs-10 pull-right" data-ng-bind="item.name"></div>
+                <hr class="col-xs-9 pull-right">
+            </div>  
+            
+        </div>
+
+        <h2 class="container summary-title">Review of body systems</h2>
+        <div class="form-horizontal form-static container">
+            
+            <article class="col-xs-10 pull-right">
+                <p data-ng-bind="summary.symptomNarrative.complaint"></p>
+                <p data-ng-bind="summary.symptomNarrative.denied"></p>
+            </article>
+        </div>
+        <br>
+    </div>
+    <div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out"><i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+</section>

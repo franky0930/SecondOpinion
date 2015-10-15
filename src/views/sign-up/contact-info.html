@@ -1,0 +1,38 @@
+<div content-for="title">Account Setup</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" data-ng-disabled="contactinfoform.$invalid" data-ng-click="submitLink()">{{btn}} <a data-ng-if="!isSignUp" class="btn btn-link btn-lg btn-block" href="{{cancel_link}}">cancel</a></a>
+    </div>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content container">
+        <form role="form" name="contactinfoform" data-ng-submit="submitForm(contactinfoform.$valid)" novalidate>
+            <fieldset>
+                <legend>Email</legend>
+                <div class="form-group">
+                    <label for="email-primary" class="sr-only">Primary</label>
+                    <input type="email" class="form-control" id="email-primary" placeholder="Primary" data-ng-model="user.primaryEmail" required data-ng-if="disabledMail">
+                    <input type="email" class="form-control" id="email-primary" placeholder="Primary" data-ng-model="user.primaryEmail" required data-ng-if="!disabledMail">
+                </div>
+                <div class="form-group">
+                    <label for="email-secondary" class="sr-only">Secondary</label>
+                    <input type="email" class="form-control" id="email-secondary" placeholder="Secondary" data-ng-model="user.secondaryEmail">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Phone - One number required</legend>
+                <div class="form-group">
+                    <label for="phone-home" class="sr-only">Home</label>
+                    <input type="text" class="form-control" id="phone-home" placeholder="Home" data-ng-model="user.homePhone" data-ng-required="!user.workPhone && !user.dayPhone" maxlength="15">
+                </div>
+                <div class="form-group">
+                    <label for="phone-work" class="sr-only">Work</label>
+                    <input type="text" class="form-control" id="phone-work" placeholder="Work" data-ng-model="user.workPhone" data-ng-required="!user.homePhone && !user.dayPhone" maxlength="15">
+                </div>
+                <div class="form-group">
+                    <label for="phone-day" class="sr-only">Day</label>
+                    <input type="text" class="form-control" id="phone-day" placeholder="Day" data-ng-model="user.dayPhone" data-ng-required="!user.homePhone && !user.workPhone" maxlength="15">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

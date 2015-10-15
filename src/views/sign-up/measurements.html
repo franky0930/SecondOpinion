@@ -1,0 +1,98 @@
+<div content-for="title">Account Setup</div>
+<div content-for="navbar-bottom">
+    <div bottombar class="navbar-inner"><a class="btn btn-lg btn-block btn-bottom" ng-disabled="measurementsform.$invalid" ng-click="submitLink()">continue <a href="#/home" class="btn btn-link btn-lg btn-block">Skip this step</a></a>
+    </div>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content container">
+        <form role="form" name="measurementsform" ng-submit="submitForm(measurementsform.$valid)" novalidate>
+            <fieldset>
+                <legend>Select Which Data You Would Like to Enter at This Time</legend>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="body-system" ng-model="forms.body_system">
+                        <label for="body-system" class="checkbox-background"></label>
+                    </div>
+                    <label for="body-system">Body System</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="allergies" ng-model="forms.allergies">
+                        <label for="allergies" class="checkbox-background"></label>
+                    </div>
+                    <label for="allergies">Allergies</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="immunizations" ng-model="forms.immunizations">
+                        <label for="immunizations" class="checkbox-background"></label>
+                    </div>
+                    <label for="allergies">Immunizations</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="exercise" ng-model="forms.exercise">
+                        <label for="exercise" class="checkbox-background"></label>
+                    </div>
+                    <label for="exercise">Exercise</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="food_drink" ng-model="forms.food_drink">
+                        <label for="food_drink" class="checkbox-background"></label>
+                    </div>
+                    <label for="food_drink">Food & Drink</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="height" ng-model="forms.height">
+                        <label for="height" class="checkbox-background"></label>
+                    </div>
+                    <label for="height">Height</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="weight" ng-model="forms.weight">
+                        <label for="weight" class="checkbox-background"></label>
+                    </div>
+                    <label for="weight">Weight</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="procedures" ng-model="forms.procedures">
+                        <label for="procedures" class="checkbox-background"></label>
+                    </div>
+                    <label for="procedures">Procedures</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="family_history" ng-model="forms.family_history">
+                        <label for="family_history" class="checkbox-background"></label>
+                    </div>
+                    <label for="family_history">Familiy History</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="lab_test_results" ng-model="forms.lab_test_results">
+                        <label for="lab_test_results" class="checkbox-background"></label>
+                    </div>
+                    <label for="lab_test_results">Lab Test Results</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="conditions" ng-model="forms.conditions">
+                        <label for="conditions" class="checkbox-background"></label>
+                    </div>
+                    <label for="conditions">Conditions</label>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="document_upload" ng-model="forms.document_upload">
+                        <label for="document_upload" class="checkbox-background"></label>
+                    </div>
+                    <label for="document_upload">Document Upload</label>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

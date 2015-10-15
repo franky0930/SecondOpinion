@@ -1,0 +1,10 @@
+<h2 class="title-section text-center">What is your current Weight?</h2>
+<form role="form" ng-submit="submitForm()">
+    <div id="knob-wrapper">
+        <input id="knob-input" knob class="knob" type="range" min="0" max="300" data-width="222" data-height="222" data-anglerange="360" ng-model="weight.weight" required>
+    </div>
+    <div class="form-group">
+        <label for="unit" class="sr-only">Unit</label>
+        <select class="form-control knob-select" id="unit" ng-model="weight.unit" ng-options="unit for unit in units"></select>
+    </div>
+</form>

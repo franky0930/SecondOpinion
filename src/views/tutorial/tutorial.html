@@ -1,0 +1,15 @@
+<div id="tutorial">
+	<ul rn-carousel rn-carousel-controls class="rn-carousel-full-size" rn-carousel-index="carouselIndex">
+		<li ng-repeat="step in steps" class="step step-{{$index}}">
+			<header class="tutorial-header">
+				<span class="icon-holder" data-ng-bind-html="step.img"></span>
+				<h1 data-ng-bind-html="step.title"></h1>
+			</header>
+			<article class="tutorial-text">
+				<p data-ng-bind-html="step.txt"></p>
+				<a data-ng-if="step.hasBtn" class="btn btn-lg" href="#/home">Got it!</a>
+			</article>
+		</li>
+	</ul>
+	<div rn-carousel-indicators ng-if="steps.length > 1" slides="steps" rn-carousel-index="carouselIndex"></div>
+</div>

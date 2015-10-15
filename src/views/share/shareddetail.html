@@ -1,0 +1,108 @@
+<div content-for="title">{{title}}</div>
+<header class="header-section clearfix"><div class="col-sm-4 col-md-4 sub-nav"><a href="{{backurl}}"><i class="fa fa-reply"></i><span>Back</span></a></div>
+</header>
+<section class="scrollable">
+    <div class="scrollable-content container" id="shared" data-ng-hide="waiting">
+        <h1>Shared Details</h1>
+        <table class="table" data-ng-if="shared" data-ng-repeat="item in shared | orderBy:predicate:reverse">
+            <tr data-ng-if="type == 'byMe'">
+                <th>Person
+                </th>
+                <td data-ng-bind="item.sharedTo"></td>
+            </tr>
+            <tr data-ng-if="type != 'byMe'">
+                <th >Person
+                </th>
+                <td data-ng-bind="item.sharedBy"></td>
+            </tr>
+            <tr>
+                <th >Date
+                </th>
+                <td data-ng-bind="item.sharedDate | date:'MMMM dd, yyyy'"></td>
+            </tr>
+            <tr>
+                <th >Note</th>
+                <td><span data-ng-hide="item.editMode" data-ng-bind="item.senderNotes[0].note"></span>
+                    <textarea data-ng-if="type == 'byMe'" data-ng-show="item.editMode" data-ng-model="item.note" class="form-control"></textarea></td>
+                
+            </tr>
+            <tr data-ng-if="type == 'byMe'">
+                <th >Expiry date
+                </th>
+                <td>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.expiryDate | date:'MM/dd/yyyy'"></span>
+                            <input data-ng-show="item.editMode" type="date" id="expiryDate" data-ng-model="item.expiryDate" class="form-control input-sm" min="{{today}}" ></td>
+            </tr>
+            <tr data-ng-if="type != 'byMe'">
+                <th >Address
+                </th>
+                <td>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.line1" datang-if="item.sharedAddress.line1"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.city" datang-if="item.sharedAddress.city"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.state" datang-if="item.sharedAddress.state"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.zip" datang-if="item.sharedAddress.zip"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.country" datang-if="item.sharedAddress.country"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button data-ng-if="type=='byMe'" data-ng-hide="item.editMode" class="pull-right btn btn-wide btn-info btn-xs" data-ng-click="item.editItem(item.key, 1)" type="button">Edit</button>
+<button data-ng-if="type=='byMe'" data-ng-show="item.editMode" class="pull-right btn btn-wide btn-info btn-xs" data-ng-click="item.updateItems(item.key)" type="button">Submit</button>
+<button data-ng-if="type=='byMe'" data-ng-show="item.editMode" class="pull-right btn btn-wide btn-link btn-xs danger" data-ng-click="item.editItem(item.key, 0)" type="button">Cancel</button></td>
+            </tr>
+        </table>
+        <!--
+        <table class="table" data-ng-if="shared">
+            <thead>
+            <tr>
+                <th data-ng-click="sortTable('sharedTo')">Person <span data-ng-show="predicate == 'sharedTo'"><i data-ng-show="reverse" class="fa fa-caret-up"></i> <i data-ng-hide="reverse" class="fa fa-caret-down"></i></span>
+                </th>
+                <th data-ng-click="sortTable('sharedDate')">Date <span data-ng-show="predicate == 'sharedDate'"><i data-ng-show="reverse" class="fa fa-caret-up"></i> <i data-ng-hide="reverse" class="fa fa-caret-down"></i></span>
+                </th>
+                <th data-ng-if="type == 'byMe'">
+                    <div class="row"><span class="col-xs-6">Notes</span> <span data-ng-click="sortTable('expiryDate')" class="col-xs-3">Expiry date <span data-ng-show="predicate == 'expiryDate'"><i data-ng-show="reverse" class="fa fa-caret-up"></i> <i data-ng-hide="reverse" class="fa fa-caret-down"></i></span></span> <span class="col-xs-3"></span>
+                    </div>
+                </th>
+                <th data-ng-if="type != 'byMe'">Notes</th>
+                <th data-ng-if="type != 'byMe'">Address</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="item in shared | orderBy:predicate:reverse">
+                <td data-ng-if="type == 'byMe'" data-ng-bind="item.sharedTo"></td>
+                <td data-ng-if="type != 'byMe'" data-ng-bind="item.sharedBy"></td>
+                <td data-ng-bind="item.sharedDate | date:'MMMM dd, yyyy'"></td>
+                <td data-ng-if="type == 'byMe'">
+                    <form class="row">
+                        <div class="col-xs-6"><span data-ng-hide="item.editMode" data-ng-bind="item.senderNotes[0].note"></span>
+                            <textarea data-ng-show="item.editMode" data-ng-model="item.note" class="form-control"></textarea>
+                        </div>
+                        <div class="col-xs-3"><span data-ng-hide="item.editMode" data-ng-bind="item.expiryDate | date:'MM/dd/yyyy'"></span>
+                            <input data-ng-show="item.editMode" type="date" id="expiryDate" data-ng-model="item.expiryDate" class="form-control input-sm" min="{{today}}">
+                        </div>
+                        <div class="col-xs-3">
+                            <button data-ng-hide="item.editMode" class="btn btn-wide btn-info btn-xs" data-ng-click="item.editItem(item.key, 1)" type="button">Edit</button>
+                            <button data-ng-show="item.editMode" class="btn btn-wide btn-info btn-xs" data-ng-click="item.updateItems(item.key)" type="button">Submit</button>
+                            <button data-ng-show="item.editMode" class="btn btn-wide btn-link btn-xs danger" data-ng-click="item.editItem(item.key, 0)" type="button">Cancel</button>
+                        </div>
+                    </form>
+                </td>
+
+                <td data-ng-if="type != 'byMe'"><span data-ng-hide="item.editMode" data-ng-bind="item.senderNotes[0].note"></span>
+                </td>
+                <td data-ng-if="type != 'byMe'">
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.line1" datang-if="item.sharedAddress.line1"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.city" datang-if="item.sharedAddress.city"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.state" datang-if="item.sharedAddress.state"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.zip" datang-if="item.sharedAddress.zip"></span>
+                    <span data-ng-hide="item.editMode" data-ng-bind="item.sharedAddress.country" datang-if="item.sharedAddress.country"></span>
+                    <span data-ng-hide="item.editMode" datang-if="item.sharedAddress.line1==''" data-ng-bind="">Not recorded.</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>-->
+        <div data-ng-if="!shared">There are no records to show.</div>
+    </div>
+    <div data-ng-show="waiting" class="app-content-loading zoom-in zoom-out"><i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+</section>

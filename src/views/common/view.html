@@ -1,0 +1,7 @@
+<div content-for="title">{{ itemData.items }}</div>
+<header class="header-section clearfix">
+	<div class="col-xs-4 col-sm-4 col-md-4 sub-nav"><a href="#/{{ itemData.type }}/{{ itemData.shortcut }}"><i class="fa fa-reply"></i><span>Back</span></a></div><div class="col-xs-4 col-sm-4 col-md-4 sub-nav"><a data-ng-click="deleteItem()" class="danger delete-btn"><i class="fa fa-pencil"></i><span>delete</span></a></div><div class="col-xs-4 col-sm-4 col-md-4 sub-nav"><a data-ng-href="#/{{ itemData.type }}/{{ itemData.shortcutSingle }}/{{ collection.id }}/edit"><i class="fa fa-times"></i><span>Edit</span></a></div>
+</header>
+<div id="measurements-form" class="scrollable">
+    <div data-ng-include="'views/' + itemData.type + '/' + itemData.shortcut + '/view.html'" class="scrollable-content container"></div>
+</div>
